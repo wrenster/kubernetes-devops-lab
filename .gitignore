@@ -1,0 +1,14 @@
+# Kubernetes-generated exports
+deployment-export.yaml
+
+# Local configuration and temporary files
+*.log
+*.tmp
+*.swp
+.DS_Store
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
