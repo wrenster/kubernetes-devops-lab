@@ -97,6 +97,15 @@ kubectl apply -f service.yaml
 kubectl apply -f hpa.yaml
 ```
 
+### Install Metrics Server
+
+The Horizontal Pod Autoscaler requires Metrics Server.
+
+For this local kind cluster:
+
+```bash
+./scripts/install-metrics-server.sh
+
 The HPA requires Metrics Server to be installed and functioning.
 
 ### Access the Application
