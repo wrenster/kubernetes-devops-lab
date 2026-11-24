@@ -20,6 +20,18 @@ jobs:
       - name: List files
         run: ls -lah
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: List files after checkout
+        run: ls -lah
+
+      - name: Check Git status
+        run: git status
+
+      - name: Show current commit
+        run: git log -1 --oneline
+
       - name: Check installed software
         run: |
           git --version
