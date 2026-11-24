@@ -1,0 +1,33 @@
+name: Learning GitHub Actions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  explore-runner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Identify the user
+        run: whoami
+
+      - name: Identify the operating system
+        run: cat /etc/os-release
+
+      - name: Check working directory
+        run: pwd
+
+      - name: List files
+        run: ls -lah
+
+      - name: Check installed software
+        run: |
+          git --version
+          docker --version
+          python3 --version
+
+      - name: Check available resources
+        run: |
+          nproc
+          free -h
+          df -h
