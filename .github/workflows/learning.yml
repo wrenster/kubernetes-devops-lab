@@ -43,3 +43,20 @@ jobs:
           nproc
           free -h
           df -h
+      - name: Create a test file
+        run: |
+          echo "Created by the first job" > test.txt
+          cat test.txt
+  second-job:
+    runs-on: ubuntu-latest
+    needs: explore-runner
+
+    steps:
+      - name: Check working directory
+        run: pwd
+
+      - name: List files
+        run: ls -lah
+
+      - name: Read test file
+        run: cat test.txt
