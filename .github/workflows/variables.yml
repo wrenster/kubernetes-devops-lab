@@ -1,0 +1,29 @@
+name: Learning Environment Variables
+
+on:
+  workflow_dispatch:
+
+env:
+  APP_NAME: kubernetes-lab
+
+jobs:
+  variable-test:
+    runs-on: ubuntu-latest
+
+    env:
+      ENVIRONMENT: development
+
+    steps:
+      - name: Display variables
+        env:
+          VERSION: "1.0"
+        run: |
+          echo "Application: $APP_NAME"
+          echo "Environment: $ENVIRONMENT"
+          echo "Version: $VERSION"
+
+      - name: Test variable scope
+        run: |
+          echo "Application: $APP_NAME"
+          echo "Environment: $ENVIRONMENT"
+          echo "Version: $VERSION"
